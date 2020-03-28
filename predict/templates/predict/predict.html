@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>펀딩 본문 텍스트를 입력하세요.</h2><hr><br>
+    <p>입력한 텍스트로 펀딩 성공여부를 예측할 수 있습니다.</p>
+    <p>
+        <form action='{% url "predict:post" %}' method="post" class="post-form">
+            {% csrf_token %}
+            
+            <p>
+                <label for="text">텍스트:</label> 
+                <textarea rows="10" class="form-control" name="text"></textarea>
+            </p>
+            <button type="submit" class="btn btn-primary btn-large">예측결과보기</button>
+            
+        </form>
+    </p>
+</body>
+</html>
